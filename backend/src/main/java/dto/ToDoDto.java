@@ -1,6 +1,6 @@
 package dto;
 
-import todo.todolist.model.Todo;
+import model.Todo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

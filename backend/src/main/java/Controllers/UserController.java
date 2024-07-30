@@ -1,8 +1,8 @@
 package Controllers;
 
-import todo.todolist.controllers.api.UserApi;
-import todo.todolist.dto.UserDto;
-import todo.todolist.services.UserService;
+import Controllers.api.UserApi;
+import dto.UserDto;
+import services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +18,11 @@ import java.util.List;
 public class UserController implements UserApi {
 
     @Autowired
+    /* allows Spring to resolve and inject collaborating beans (dependencies) into your bean */
     private UserService userService;
 
     @Override
+    /*tell Java you're replacing a parent class method with a new version in the child class. */
     public ResponseEntity<UserDto> createUser(UserDto user) {
         return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
     }

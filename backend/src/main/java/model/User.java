@@ -21,11 +21,11 @@ public class User implements Serializable{
     private String firstName;
     private String lastName;
     private String email;
-    private String username;
+    private String userName;
     private String password;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     /*user has a one to many rp with categories */
     /*mappedBy: user owns the rp */
-    private List<Todo> category;
+    private List<Category> category;
 }
 

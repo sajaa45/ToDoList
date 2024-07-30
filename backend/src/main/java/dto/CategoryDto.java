@@ -1,6 +1,6 @@
 package dto;
 
-import todo.todolist.model.Category;
+import model.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

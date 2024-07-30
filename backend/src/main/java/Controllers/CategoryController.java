@@ -1,12 +1,10 @@
 package Controllers;
 
-package todo.todolist.controllers;
-
-import todo.todolist.controllers.api.CategoryApi;
-import todo.todolist.dto.CategoryDto;
-import todo.todolist.dto.TodoDto;
-import todo.todolist.services.CategoryService;
-import todo.todolist.services.TodoService;
+import Controllers.api.CategoryApi;
+import dto.CategoryDto;
+import dto.TodoDto;
+import services.CategoryService;
+import services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
