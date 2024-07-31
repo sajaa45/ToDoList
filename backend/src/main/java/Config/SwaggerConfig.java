@@ -28,7 +28,7 @@ public class SwaggerConfig {
                 )
                 .groupName("REST API V1")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.bouali.todo"))
+                .apis(RequestHandlerSelectors.basePackage("todo.todolist"))
                 .paths(PathSelectors.ant(APP_ROOT + "/**"))
                 .build();
     }
