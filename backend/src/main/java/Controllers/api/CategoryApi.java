@@ -39,7 +39,7 @@ public interface CategoryApi {
     })
     ResponseEntity<List<CategoryDto>> getAllCategories();
 
-    @GetMapping(value = APP_ROOT + "/categories/todos/{id:.+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ROOT + "/categories/todos/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Todo Details by category ID", notes = "Returns the list of the Todo of a selected category", responseContainer = "List<CategoryDto>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "List of the Todos"),
@@ -48,13 +48,13 @@ public interface CategoryApi {
             @ApiParam(value = "Category ID", required = true) Long id
     );
 
-    @GetMapping(value = APP_ROOT + "/categories/todos/today/{userId:.+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ROOT + "/categories/todos/today/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "List of all categories and Todo for today", notes = "Returns the list of the Todo of a selected category", responseContainer = "List<CategoryDto>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "List of the Todos"),
     })
     ResponseEntity<List<TodoDto>> getAllTodoByCategoriesForToday(
-            @ApiParam(value = "User ID", required = true) @PathParam("userId") Long userId
+            @ApiParam(value = "User ID", required = true) @PathVariable("userId") Long userId
     );
 
     @GetMapping(value = APP_ROOT + "/categories/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -66,7 +66,7 @@ public interface CategoryApi {
             @ApiParam(value = "User ID", required = true) Long id
     );
 
-    @GetMapping(value = APP_ROOT + "/categories/{id:.+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ROOT + "/categories/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Category Details", notes = "Returns the list of the users", response = CategoryDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "The Category"),

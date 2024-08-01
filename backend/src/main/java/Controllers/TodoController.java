@@ -32,7 +32,7 @@ public class TodoController implements TodoApi {
     }
 
     @Override
-    @PatchMapping("/{id}")
+    @PatchMapping("/update")
     public ResponseEntity<TodoDto> updateTodo(TodoDto todoDto) {
         return new ResponseEntity<>(todoService.save(todoDto), HttpStatus.CREATED);
     }
@@ -44,13 +44,13 @@ public class TodoController implements TodoApi {
     }
 
     @Override
-    @GetMapping("/{id}")
+    @GetMapping("/{todoId:.+}")
     public ResponseEntity<TodoDto> getTodo(Long todoId) {
         return  new ResponseEntity<>(todoService.findById(todoId), HttpStatus.OK);
     }
 
     @Override
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id:.+}")
     public ResponseEntity deleteTodo(Long id) {
         return null;
     }

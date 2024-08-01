@@ -1,9 +1,5 @@
 package model;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
-import javax.persistence.CascadeType;
+import javax.persistence.*;
 
 import java.io.Serializable;/*let classes be connected */
 import java.util.List;

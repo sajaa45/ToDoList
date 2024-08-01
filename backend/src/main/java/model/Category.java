@@ -1,13 +1,6 @@
 package model;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
-import javax.persistence.CascadeType;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.FetchType;
 
 import java.io.Serializable;/*let classes be connected */
 import java.util.List;

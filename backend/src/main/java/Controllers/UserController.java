@@ -43,13 +43,13 @@ public class UserController implements UserApi {
     }
 
     @Override
-    @GetMapping("/{id}")
+    @GetMapping("/{id:.+}")
     public ResponseEntity<UserDto> getUser(Long id) {
         return new ResponseEntity<>(userService.findById(id), HttpStatus.OK);
     }
 
     @Override
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id:.+}")
     public ResponseEntity deleteUser(Long id) {
         userService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
