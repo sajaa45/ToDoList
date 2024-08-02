@@ -1,14 +1,12 @@
 package dto;
 
-import model.Todo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.ZonedDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.ZonedDateTime;
+import model.Todo;
 
 @Data
 @AllArgsConstructor
@@ -28,7 +26,7 @@ public class TodoDto {
 
     private boolean favorite;
 
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private CategoryDto category;
 
     public static Todo toEntity(TodoDto todoDto) {

@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import static utils.Constants.APP_ROOT;
 
 @RestController
-@RequestMapping(APP_ROOT + "/authApi")
+@RequestMapping(APP_ROOT + "/auth")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class AuthController implements AuthApi {
 
@@ -18,8 +19,8 @@ public class AuthController implements AuthApi {
     private UserService userService;
 
     @Override
-    @PostMapping(APP_ROOT + "/auth/login")
-    public ResponseEntity<UserDto> loginUser(UserDto user) {
+    @PostMapping("/login")
+    public ResponseEntity<UserDto> loginUser(@RequestBody UserDto user) {
         return new ResponseEntity<>(userService.login(user), HttpStatus.OK);
     }
 }

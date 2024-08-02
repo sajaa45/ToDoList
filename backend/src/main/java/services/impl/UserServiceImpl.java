@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
         return UserDto.fromEntity(userRepository.save(UserDto.toEntity(user)));
     }
 
+  
     @Override
     public List<UserDto> findAll() {
         return userRepository.findAll().stream()

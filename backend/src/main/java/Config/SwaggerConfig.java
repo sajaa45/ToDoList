@@ -20,7 +20,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(
-                        new ApiInfoBuilder().description("")
+                        new ApiInfoBuilder()
                                 .title("Todo list Api Documentation")
                                 .version("1.0")
                                 .description("Api Documentation")

@@ -1,3 +1,28 @@
+package Controllers;
+
+import static utils.Constants.*;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import Controllers.api.CategoryApi;
+import dto.CategoryDto;
+import dto.TodoDto;
+import services.CategoryService;
+import services.TodoService;
+
 @RestController
 @RequestMapping(APP_ROOT + "/categories")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -18,7 +43,7 @@ public class CategoryController implements CategoryApi {
     @Override
     @PatchMapping("/update")
     public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto) {
-        return new ResponseEntity<>(categoryService.save(categoryDto), HttpStatus.OK);
+        return new ResponseEntity<>(categoryService.save(categoryDto), HttpStatus.CREATED);
     }
 
     @Override
@@ -36,7 +61,7 @@ public class CategoryController implements CategoryApi {
     @Override
     @GetMapping("/todos/today/{userId}")
     public ResponseEntity<List<TodoDto>> getAllTodoByCategoriesForToday(@PathVariable Long userId) {
-        return new ResponseEntity<>(categoryService.getAllTodoByCategoriesForToday(userId), HttpStatus.OK);
+        return new ResponseEntity(categoryService.getAllTodoByCategoriesForToday(userId), HttpStatus.OK);
     }
 
     @Override
